@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Dynamic Quiz Generator</title>
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="container">
+    <h1>Dynamic Quiz Generator</h1>
+    <div class="options">
+      <div class="topic-selection">
+        <h2>Select Topics:</h2>
+        <label><input type="checkbox" name="topic" value="Data Structure and Algorithm"> Data Structure and Algorithm</label>
+        <!-- Add more topics here -->
+      </div>
+      <div class="level-selection">
+        <h2>Select Difficulty Level:</h2>
+        <select id="difficulty">
+            <option value="Beginner">Beginner</option>
+            <option value="Intermediate">Intermediate</option>
+            <option value="Advanced">Advanced</option>
+          </select>
+      </div>
+    </div>
+    <button class="generate-btn">Generate Quiz</button>
+    <div class="quiz" style="display: none;">
+      <!-- Quiz questions will be dynamically generated here -->
+      <div class="question">
+        <h3>Question 1:</h3>
+        <ul>
+          <li><label><input type="radio" name="q1" value="option1"> Option 1</label></li>
+          <li><label><input type="radio" name="q1" value="option2"> Option 2</label></li>
+          <li><label><input type="radio" name="q1" value="option3"> Option 3</label></li>
+          <!-- Add more options here -->
+        </ul>
+      </div>
+      <!-- Add more questions here -->
+    </div>
+    <button class="submit-btn" style="display: none;">Submit Quiz</button>
+    <div class="score" style="display: none;">
+      <h2>Your Score: <span id="score-value">0</span></h2>
+      <!-- Feedback and correct answers will be displayed here -->
+    </div>
+  </div>
+  <!-- <script src="script.js"></script> -->
+</body>
+</html>
+<script>
+  const generateBtn = document.querySelector(".generate-btn");
+    const difficultySelect = document.getElementById("difficulty");
+
+    // Add event listener to the generate button
+    generateBtn.addEventListener("click", redirectToQuiz);
+
+    // Define the event listener function for generating the quiz and redirecting
+    function redirectToQuiz() {
+      const selectedLevel = difficultySelect.value;
+      if (selectedLevel === "Beginner") {
+        window.location.href = "Beginner.html"; // Redirect to BeginnerQuiz.html
+      } else if (selectedLevel === "Intermediate") {
+        window.location.href = "intermediate.html"; // Redirect to IntermediateQuiz.html
+      } else if (selectedLevel === "Advanced") {
+        window.location.href = "advance.html"; // Redirect to AdvancedQuiz.html
+      } else {
+        alert("Please select a difficulty level.");
+      }
+    }
+
+</script>

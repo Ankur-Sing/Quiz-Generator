@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>DSA Quiz</title>
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="container">
+    <h1>Data Structures and Algorithms Quiz</h1>
+    <div class="quiz">
+      <div class="question">
+        <h3>1. What is the time complexity of accessing an element in an array?</h3>
+        <ul>
+          <li><label><input type="radio" name="q1" value="O(1)"> O(1)</label></li>
+          <li><label><input type="radio" name="q1" value="O(log n)"> O(log n)</label></li>
+          <li><label><input type="radio" name="q1" value="O(n)"> O(n)</label></li>
+          <li><label><input type="radio" name="q1" value="O(n^2)"> O(n^2)</label></li>
+        </ul>
+        <div class="correct-answer" style="display: none;">Correct Answer: O(n)</div>
+      </div>
+      <div class="question">
+        <h3>2. Which data structure uses Last In First Out (LIFO) order?</h3>
+        <ul>
+          <li><label><input type="radio" name="q2" value="Queue"> Queue</label></li>
+          <li><label><input type="radio" name="q2" value="Stack"> Stack</label></li>
+          <li><label><input type="radio" name="q2" value="Linked List"> LinkedList</label></li>
+          <li><label><input type="radio" name="q2" value="Tree"> Tree</label></li>
+        </ul>
+        <div class="correct-answer" style="display: none;">Correct Answer: Stack</div>
+      </div>
+      <div class="question">
+        <h3>3. What does FIFO stand for in the context of data structures?</h3>
+        <ul>
+          <li><label><input type="radio" name="q3" value="First In First Out"> First In First Out</label></li>
+          <li><label><input type="radio" name="q3" value="First Input First Output"> First Input First Output</label></li>
+          <li><label><input type="radio" name="q3" value="Fast In Fast Out"> Fast In Fast Out</label></li>
+          <li><label><input type="radio" name="q3" value="None of the above"> None of the above</label></li>
+        </ul>
+        <div class="correct-answer" style="display: none;">Correct Answer: First In First Out</div>
+      </div>
+      <div class="question">
+        <h3>4. What is the time complexity of searching in a balanced binary search tree (BST)?</h3>
+        <ul>
+          <li><label><input type="radio" name="q4" value="O(1)"> O(1)</label></li>
+          <li><label><input type="radio" name="q4" value="O(log n)"> O(log n)</label></li>
+          <li><label><input type="radio" name="q4" value="O(n)"> O(n)</label></li>
+          <li><label><input type="radio" name="q4" value="O(n log n)"> O(n log n)</label></li>
+        </ul>
+        <div class="correct-answer" style="display: none;">Correct Answer: O(log n)</div>
+      </div>
+      <div class="question">
+        <h3>5. Which search algorithm works efficiently on a sorted array?</h3>
+        <ul>
+          <li><label><input type="radio" name="q5" value="Linear Search"> Linear Search</label></li>
+          <li><label><input type="radio" name="q5" value="Binary Search"> Binary Search</label></li>
+          <li><label><input type="radio" name="q5" value="DFS"> DFS</label></li>
+          <li><label><input type="radio" name="q5" value="BFS"> BFS</label></li>
+        </ul>
+        <div class="correct-answer" style="display: none;">Correct Answer: Binary Search</div>
+      </div>
+      <!-- Add more questions here -->
+    </div>
+    <button class="submit-btn">Submit Quiz</button>
+    <div class="score" style="display: none;">
+      <h2>Your Score: <span id="score-value">0</span></h2>
+      <div class="feedback"></div>
+    </div>
+  </div>
+  <!-- //<script src="script.js"></script> -->
+</body>
+</html>
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+  const submitBtn = document.querySelector('.submit-btn');
+  const quizContainer = document.querySelector('.quiz');
+  const scoreContainer = document.querySelector('.score');
+  const feedbackContainer = document.querySelector('.feedback');
+  let score = 0;
+
+  // Define correct answers
+  const correctAnswers = ['O(n)','Stack','First In First Out','O(log n)','Binary Search'];
+   
+   // Update with correct answers for all questions
+
+  submitBtn.addEventListener('click', () => {
+    score = 0;
+    const userAnswers = [];
+
+    quizContainer.querySelectorAll('input[type="radio"]:checked').forEach(input => {
+      userAnswers.push(input.value);
+    });
+
+    // Check user answers and calculate score
+    userAnswers.forEach((answer, index) => {
+      if (answer === correctAnswers[index]) {
+        score++;
+      }
+    });
+
+    // Display the score and feedback
+    showScore(score);
+    showFeedback(userAnswers, correctAnswers);
+  });
+
+  function showScore(score) {
+    const scoreValue = document.querySelector('#score-value');
+    scoreValue.textContent = score;
+    scoreContainer.style.display = 'block';
+  }
+
+  function showFeedback(userAnswers, correctAnswers) {
+    feedbackContainer.innerHTML = '';
+    userAnswers.forEach((answer, index) => {
+      const feedbackItem = document.createElement('div');
+      feedbackItem.classList.add('feedback-item');
+      feedbackItem.innerHTML = `
+        <p><strong>Question ${index + 1}:</strong></p>
+        <p>Your Answer: ${answer}</p>
+        <p>Correct Answer: ${correctAnswers[index]}</p>
+      `;
+      feedbackContainer.appendChild(feedbackItem);
+    });
+    feedbackContainer.style.display = 'block';
+  }
+});
+
+</script>

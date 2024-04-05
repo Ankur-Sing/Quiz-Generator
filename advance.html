@@ -1,0 +1,80 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>DSA Quiz</title>
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="container">
+    <h1>Data Structures and Algorithms Quiz</h1>
+    <div class="quiz">
+      <div class="question">
+        <h3>1. What is the time complexity of searching in a balanced binary search tree (BST)?</h3>
+        <ul>
+          <li><label><input type="radio" name="q1" value="O(1)"> O(1)</label></li>
+          <li><label><input type="radio" name="q1" value="O(log n)"> O(log n)</label></li>
+          <li><label><input type="radio" name="q1" value="O(n)"> O(n)</label></li>
+          <li><label><input type="radio" name="q1" value="O(n log n)"> O(n log n)</label></li>
+        </ul>
+      </div>
+      <div class="question">
+        <h3>2. Which data structure uses First In First Out (FIFO) order?</h3>
+        <ul>
+          <li><label><input type="radio" name="q2" value="Stack"> Stack</label></li>
+          <li><label><input type="radio" name="q2" value="Queue"> Queue</label></li>
+          <li><label><input type="radio" name="q2" value="Linked List"> Linked List</label></li>
+          <li><label><input type="radio" name="q2" value="Tree"> Tree</label></li>
+        </ul>
+      </div>
+      <div class="question">
+        <h3>3. Which sorting algorithm has the best worst-case time complexity?</h3>
+        <ul>
+          <li><label><input type="radio" name="q3" value="Bubble Sort"> Bubble Sort</label></li>
+          <li><label><input type="radio" name="q3" value="Merge Sort"> Merge Sort</label></li>
+          <li><label><input type="radio" name="q3" value="Selection Sort"> Selection Sort</label></li>
+          <li><label><input type="radio" name="q3" value="Quick Sort"> Quick Sort</label></li>
+        </ul>
+      </div>
+      <div class="question">
+        <h3>4. Which data structure is used for implementing recursion?</h3>
+        <ul>
+          <li><label><input type="radio" name="q4" value="Stack"> Stack</label></li>
+          <li><label><input type="radio" name="q4" value="Queue"> Queue</label></li>
+          <li><label><input type="radio" name="q4" value="Linked List"> Linked List</label></li>
+          <li><label><input type="radio" name="q4" value="Tree"> Tree</label></li>
+        </ul>
+      </div>
+      <div class="question">
+        <h3>5. Which of the following is NOT a searching algorithm?</h3>
+        <ul>
+          <li><label><input type="radio" name="q5" value="Binary Search"> Binary Search</label></li>
+          <li><label><input type="radio" name="q5" value="Depth-First Search"> Depth-First Search</label></li>
+          <li><label><input type="radio" name="q5" value="Breadth-First Search"> Breadth-First Search</label></li>
+          <li><label><input type="radio" name="q5" value="Quick Sort"> Quick Sort</label></li>
+        </ul>
+      </div>
+      <div class="question">
+        <h3>6. Which data structure is used to implement a priority queue?</h3>
+        <ul>
+          <li><label><input type="radio" name="q6" value="Stack"> Stack</label></li>
+          <li><label><input type="radio" name="q6" value="Queue"> Queue</label></li>
+          <li><label><input type="radio" name="q6" value="Heap"> Heap</label></li>
+          <li><label><input type="radio" name="q6" value="Linked List"> Linked List</label></li>
+        </ul>
+
+      </div>
+      
+      <!-- Add more questions here -->
+    </div>
+    <button class="submit-btn">Submit Quiz</button>
+    <div class="score" style="display: none;">
+      <h2>Your Score: <span id="score-value">0</span></h2>
+      <!-- Feedback and correct answers will be displayed here -->
+    </div>
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>

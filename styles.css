@@ -1,0 +1,49 @@
+body {
+    font-family: Arial, sans-serif;
+  }
+  
+  .container {
+    max-width: 800px;
+    margin: 50px auto;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+  }
+  .generate-btn{
+    margin-left: 100px;
+    margin: auto;
+    margin-top: 10px;
+    margin-left: 250px;
+    
+  }
+  
+  h1 {
+    text-align: center;
+  }
+  
+  .options {
+    display: flex;
+    justify-content: space-between;
+  }
+  
+  .topic-selection,
+  .level-selection {
+    flex: 1;
+  }
+  
+  .quiz {
+    margin-top: 20px;
+  }
+  
+  .question {
+    margin-bottom: 20px;
+  }
+  
+  .submit-btn {
+    margin-top: 20px;
+  }
+  
+  .score {
+    margin-top: 20px;
+  }
+  
